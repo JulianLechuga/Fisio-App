@@ -25,15 +25,4 @@ export default function Nav() {
       </div>
     </nav>
   );
-    {/* <div className={nav.nav}>
-      <Link to = "/">
-        <span className={nav.button}> Modo Clásico </span>
-      </Link>
-      <Link to = "/timer">
-        <span className={nav.button}> Modo temporizador </span>
-      </Link>
-      <Link to = "/about">
-        <span className={nav.button}> Conoce más </span>
-      </Link>
-    </div> */}
 };

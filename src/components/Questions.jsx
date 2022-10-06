@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { get_Question } from '../store/actions';
 import styles from "./css/question.module.css"
@@ -11,38 +11,44 @@ export default function Questions() {
         dispatch(get_Question());
     }, []);
 
-    console.log(stateQuestion);
-
     function endQuestion() {
       dispatch(get_Question())
-      document.getElementById("title").style.backgroundColor = "white"
+      document.getElementById("title").className = styles.questionTitle;
       document.getElementById("option1").disabled = false;
       document.getElementById("option2").disabled = false;
       document.getElementById("option3").disabled = false;
       document.getElementById("option4").disabled = false;
+      document.getElementById("option1").className = styles.questionOption;
+      document.getElementById("option2").className = styles.questionOption;
+      document.getElementById("option3").className = styles.questionOption;
+      document.getElementById("option4").className = styles.questionOption;
     };
 
     let handleAnswer = (e) => {
-      console.log(e.target.outerText);
       document.getElementById("option1").disabled = true;
       document.getElementById("option2").disabled = true;
       document.getElementById("option3").disabled = true;
       document.getElementById("option4").disabled = true;
+      console.log(e);
       if (e.target.outerText === stateQuestion.correct) {
-        alert("Bien!");
-        document.getElementById("title").style.backgroundColor = "green"
-        setTimeout(endQuestion, 3000)
+        document.getElementById("title").className = styles.questionTitleGood;
+        document.getElementById("option1").className = styles.questionOptionGood;
+        document.getElementById("option2").className = styles.questionOptionGood;
+        document.getElementById("option3").className = styles.questionOptionGood;
+        document.getElementById("option4").className = styles.questionOptionGood;
+        setTimeout(endQuestion, 4000);
       } else {
-        document.getElementById("title").style.backgroundColor = "red"
-        alert("A recursar");
-        setTimeout(endQuestion, 3000)
+        document.getElementById("title").className = styles.questionTitleBad;
+        document.getElementById("option1").className = styles.questionOptionBad;
+        document.getElementById("option2").className = styles.questionOptionBad;
+        document.getElementById("option3").className = styles.questionOptionBad;
+        document.getElementById("option4").className = styles.questionOptionBad;
+        setTimeout(endQuestion, 4000);
       };
     };
 
     let handleNew = () => {
-      if(window.confirm("Seguro?")){
         dispatch(get_Question());
-      };
     };
 
   return (
