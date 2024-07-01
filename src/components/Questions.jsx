@@ -8,10 +8,11 @@ export default function Questions(questions) {
   let stateQuestion = useSelector((state) => state.randomQuestion);
   let dispatch = useDispatch();
   const location = useLocation();
-
+  const url = window.location.href.toLowerCase();
+  
   useEffect(() => {
     const category = location.pathname.split("/")[1];
-
+  
     if (category === "fisio") {
       dispatch(get_Fisio_Question());
     } else if (category === "micro") {
@@ -20,7 +21,15 @@ export default function Questions(questions) {
   }, [dispatch, location.pathname]);
 
   function endQuestion() {
-    dispatch(get_Fisio_Question());
+
+    if (url.includes("fisio")) {
+      dispatch(get_Fisio_Question());
+    } else if (url.includes("micro")) {
+      dispatch(get_Micro_Question());
+    } else {
+      console.error("URL does not contain fisio or micro keyword");
+    }
+  
     document.getElementById("title").className = styles.questionTitle;
     document.getElementById("option1").disabled = false;
     document.getElementById("option2").disabled = false;
@@ -57,8 +66,6 @@ export default function Questions(questions) {
   };
 
   const handleNew = () => {
-    const url = window.location.href.toLowerCase();
-
     if (url.includes("fisio")) {
       dispatch(get_Fisio_Question());
     } else if (url.includes("micro")) {
