@@ -1,28 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
-
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <span class="navbar-brand">Ta dificil aprobar</span>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <span className="navbar-brand">Ta dificil aprobar</span>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <Link to="/" class="nav-link"> Modo Clásico </Link>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <NavLink exact to="/" className="nav-link">Modo Clásico</NavLink>
           </li>
-          <li class="nav-item">
-            <Link to="/timer" class="nav-link"> Modo Temporizador </Link>
+          <li className="nav-item">
+            <NavLink to="/fisio" className="nav-link">Fisiologia</NavLink>
           </li>
-          <li class="nav-item">
-            <Link to="/about" class="nav-link">Conoce más</Link>
+          <li className="nav-item">
+            <NavLink to="/micro" className="nav-link">Microbiología</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink to="/about" className="nav-link">Conoce más</NavLink>
           </li>
         </ul>
       </div>
     </nav>
   );
-};
+}
