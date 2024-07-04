@@ -1544,6 +1544,974 @@ let microQuestions = [
   },
 ];
 
+let farmacoQuestions = [
+  {
+    id: 1,
+    title:
+      "En una infusión intravenosa continua el cociente pico/valle es igual a:",
+    option1: "0",
+    option2: "1",
+    option3: "2",
+    option4: "4",
+    correct: "1",
+  },
+  {
+    id: 2,
+    title:
+      "La VM de una droga administrada por vía IV, y con cinética de orden 1, es de 16 horas. El cociente pico/valle, una vez alcanzada la meseta, es de 2. Cada cuantas horas se ingiere el fármaco?",
+    option1: "16hs",
+    option2: "32hs",
+    option3: "64 hs",
+    option4: "128hs",
+    correct: "16hs",
+  },
+  {
+    id: 3,
+    title: "El fator de acumulación depende exclusivamente de:",
+    option1: "El intervalo interdosis y la vida media",
+    option2: "Dosis de mantenimiento y la vida media",
+    option3: "El intervalo interdosis y el mecanismo de absorción",
+    option4: "La vía de administración y el clearance",
+    correct: "El intervalo interdosis y la vida media",
+  },
+  {
+    id: 4,
+    title:
+      "Un fármaco que posee una vida media de 12 horas se administra con un patrón de dosificación de 200mg cada 6hs vía oral. Teniendo en cuenta que se decide aumentar la dosis a 400mg cada 6hs, el tiempo que se tardara en alcanzar una nueva concentración plasmática en estadio estacionario es:",
+    option1: "6hs",
+    option2: "12hs",
+    option3: "24hs",
+    option4: "48hs",
+    correct: "48hs",
+  },
+  {
+    id: 5,
+    title:
+      "Una droga administrada por vía oral, en meseta, alcanza una concentración de 100mg. Teniendo en cuenta que su FA es 2 y que tiene una BD del 10%, ¿cuál será la DM?",
+    option1: "250mg",
+    option2: "50mg",
+    option3: "500mg",
+    option4: "100mg",
+    correct: "500mg",
+  },
+  {
+    id: 6,
+    title:
+      "La VM de una droga administrada por vía IV es 4hs. Una vez alcanzada la meseta, el cociente pico/valle es de 8. Cada cuantas horas se administra esta droga?",
+    option1: "2hs",
+    option2: "4hs",
+    option3: "12hs",
+    option4: "16hs",
+    correct: "12hs",
+  },
+  {
+    id: 7,
+    title:
+      "Cuantas vidas medias deberán transcurrir para que se elimine el 85% de una droga?",
+    option1: "1 VM",
+    option2: "2 VM",
+    option3: "3 VM",
+    option4: "4 VM",
+    correct: "3 VM",
+  },
+  {
+    id: 8,
+    title:
+      "Si la dosis de una droga es de 0,75mg/día y la VM es de 48 horas. ¿Cuál sería la dosis de carga de la droga?",
+    option1: "0,99 mg",
+    option2: "1,50 mg",
+    option3: "2,55 mg",
+    option4: "1,16 mg",
+    correct: "2,55 mg",
+  },
+  {
+    id: 9,
+    title:
+      "La morfina es un analgésico de elevada eficacia. En presencia de naloxona requiere una mayor concentración de morfina para obtener un alivio completo del dolor, ya que por sí misma la naloxona no tiene efecto. Se puede deducir que:",
+    option1: "La naloxona es un antagonista competitivo",
+    option2:
+      "La morfina es un agonista completo y la naloxona un agonista parcial",
+    option3: "La morfina es menos eficaz que la naloxona",
+    option4: "La morfina es menos potente que la naloxona",
+    correct: "La naloxona es un antagonista competitivo",
+  },
+  {
+    id: 10,
+    title: "Indique cuál de las siguientes afirmaciones es correcta:",
+    option1:
+      "Si 100mg del fármaco X producen igual respuesta que 1g del fármaco Z, X es más eficaz que Z",
+    option2: "Cuanto mayor es la eficacia, mayor es la potencia de un fármaco",
+    option3:
+      "Al seleccionar un fármaco, la potencia suele ser más importante que la eficacia",
+    option4:
+      "Si 100mg del fármaco X producen igual respuesta que 1g del fármaco Z, X es más potente que Z",
+    correct:
+      "Si 100mg del fármaco X producen igual respuesta que 1g del fármaco Z, X es más potente que Z",
+  },
+  {
+    id: 11,
+    title:
+      "Las acciones de un antagonista competitivo se caracteriza entre otras cosas por:",
+    option1: "Modifican la acción de un antagonista",
+    option2: "Disminuye la potencia observada con un agonista",
+    option3:
+      "Desvía la curva dosis respuesta de un agonista hacia la izquierda",
+    option4: "Disminuye la respuesta máxima de un agonista",
+    correct: "Disminuye la potencia observada con un agonista",
+  },
+  {
+    id: 12,
+    title:
+      "H y G se unen al mismo receptor. H es un agonista con una Pce50 de 8 y una actividad intrínseca de 1. En presencia de 10-8M de la droga G, la Pce50 de H es de 7 y su actividad intrínseca es de 1. Entonces podemos concluir que:",
+    option1: "G es un agonista parcial",
+    option2: "G es un antagonista competitivo",
+    option3: "G es un antagonista no competitivo",
+    option4: "G es un agonista total",
+    correct: "G es un antagonista competitivo",
+  },
+  {
+    id: 13,
+    title:
+      "Se realizaron curvas dosis-respuesta a 4 drogas obteniéndose los siguientes resultados: Droga A: CE50=10^-7 M; Droga B: CE50=10 mM; Droga C: pCE50=8; Droga D: pCE50= 5. Ordene las drogas según su potencia (de más potente a menos potente)",
+    option1: "B > A > D > C",
+    option2: "C > A > D > B",
+    option3: "D > C > B > A",
+    option4: "C > B > D > A",
+    correct: "C > A > D > B",
+  },
+  {
+    id: 14,
+    title:
+      "Se realiza un experimento de órgano aislado y los resultados se plasman en un gráfico curva dosis-respuesta. Este se realiza con concentraciones crecientes de una droga M y con concentraciones fijas y crecientes de una droga Y. En el gráfico se observa un desplazamiento de la curva para la droga M hacia la derecha, sin modificaciones en la altura máxima. De esto se infiere que:",
+    option1:
+      "La droga M es un antagonista no competitivo, mientras que la droga Y es un agonista completo",
+    option2:
+      "La droga M es un agonista completo, mientras que la droga Y es un antagonista no competitivo",
+    option3:
+      "La droga M es un antagonista competitivo, mientras que la droga Y es un agonista completo",
+    option4:
+      "La droga M es un agonista completo, mientras que la droga Y es un antagonista competitivo",
+    correct:
+      "La droga M es un agonista completo, mientras que la droga Y es un antagonista competitivo",
+  },
+  {
+    id: 15,
+    title:
+      "A es una agonista total y B un agonista parcial que se unen al mismo receptor. Entonces la eficacia de la droga A es…",
+    option1: "Igual a la de la droga B",
+    option2: "Menor a la de la droga B",
+    option3: "Mayor a la de la droga B",
+    option4: "Menor o igual a la de la droga B",
+    correct: "Mayor a la de la droga B",
+  },
+  {
+    id: 16,
+    title:
+      "Si 10mg de naproxeno inducen la misma respuesta analgésica que 100mg de ibuprofeno, se puede concluir que el naproxeno…",
+    option1: "Es más eficaz que el ibuprofeno",
+    option2: "Es más potente que el ibuprofeno",
+    option3: "Es un agonista completo y el ibuprofeno es un agonista parcial",
+    option4: "Es un antagonista competitivo",
+    correct: "Es más potente que el ibuprofeno",
+  },
+  {
+    id: 17,
+    title:
+      "En presencia de una concentración fija de un antagonista competitivo reversible, la curva de concentración-respuesta del agonista se corre a…",
+    option1: "La izquierda, sin cambios en la respuesta máxima",
+    option2: "La izquierda, con cambios en la respuesta máxima",
+    option3: "La derecha, sin cambios en la respuesta máxima",
+    option4: "La derecha, con cambios en la respuesta máxima",
+    correct: "La derecha, sin cambios en la respuesta máxima",
+  },
+  {
+    id: 18,
+    title: "En un gráfico de Scatchard, la pendiente de la recta representa:",
+    option1: "Bmax",
+    option2: "1/Kd",
+    option3: "1/Bmax",
+    option4: "Kd",
+    correct: "1/Kd",
+  },
+  {
+    id: 19,
+    title:
+      "¿Cuál de los siguientes enunciados determinaría una “regulación en más” de los rc β1 adrenérgicos postsinápticos?",
+    option1: "Uso diario de isoproterenol por 15 días, un agonista del rc β1.",
+    option2:
+      "Uso diario de anfetaminas por 15 días que ocasionan que libere noradrenalina.",
+    option3: "Uso diario de propranolol por 15 días, un antagonista de rc β1.",
+    option4:
+      "Una enfermedad que induce el incremento de la actividad de las neuronas que liberan noradrenalina.",
+    correct: "Uso diario de propranolol por 15 días, un antagonista de rc β1.",
+  },
+  {
+    id: 20,
+    title:
+      "Se administran hormonas tiroideas en un tejido cardíaco de rata durante 15 días y luego se hace Binding de Radioligando para evaluar la densidad de rc β1. En el gráfico de Scatchard correspondiente se verá:",
+    option1:
+      "Disminución de la pendiente por tratarse de un Up- Regulation heterológo, sin modificaciones de la Bmax.",
+    option2:
+      "Aumento de la pendiente por tratarse de un Up- Regulation heterólogo y aumento de la Bmax.",
+    option3:
+      "Disminución de la pendiente por tratarse de un Up Regulation heterólogo y disminución de la Bmax.",
+    option4:
+      "Aumento de la Bmax por tratarse de un Up-Regulation heterólogo, sin modificaciones en la pendiente.",
+    correct:
+      "Aumento de la Bmax por tratarse de un Up-Regulation heterólogo, sin modificaciones en la pendiente.",
+  },
+  {
+    id: 21,
+    title: "La potencia de un fármaco… :",
+    option1: "antagonista no competitivo se puede expresar como CI50.",
+    option2: "antagonista competitivo reversible se puede expresar como EC50.",
+    option3: "agonista completo se puede expresar como IC50.",
+    option4: "agonista parcial se puede expresar como CI50.",
+    correct: "antagonista no competitivo se puede expresar como CI50.",
+  },
+  {
+    id: 22,
+    title:
+      "El significado de la Kd, disociación de un ligando a su receptor es:",
+    option1:
+      "Corresponde a la concentración de fármaco en la cual el 10% de los receptores se hallan ocupados.",
+    option2:
+      "Corresponde a la concentración de fármaco en la cual el 50% de los receptores se hallan ocupados.",
+    option3:
+      "Corresponde a la concentración de fármaco en la cual el 75% de los receptores se hallan ocupados.",
+    option4:
+      "Corresponde a la concentración de fármaco en la cual el 100% de los receptores se hallan ocupados.",
+    correct:
+      "Corresponde a la concentración de fármaco en la cual el 50% de los receptores se hallan ocupados.",
+  },
+  {
+    id: 23,
+    title:
+      "El propranolol es un antagonista β1 y β2 adrenérgico utilizado en el tratamiento de la hipertensión arterial. En su administración crónica puede desarrollarse la aparición de efectos secundarios como consecuencia de…",
+    option1: "Regulación en más de los rc β post-sinápticos",
+    option2: "Desensibilización de los rc β post-sinápticos",
+    option3: "Aumento de la liberación de catecolaminas",
+    option4: "Bloqueo de la liberación de noradrenalina",
+    correct: "Regulación en más de los rc β post-sinápticos",
+  },
+  {
+    id: 24,
+    title:
+      "Al administrar una dosis creciente de un antagonista competitivo de un fármaco agonista…",
+    option1:
+      "Se observará una disminución de la eficacia del fármaco agonista.",
+    option2:
+      "La curva de dosis-respuesta del agonista se desplazará hacia la izquierda.",
+    option3:
+      "Se observará un desplazamiento hacia la derecha de la curva dosis-respuesta del agonista, con disminución de la respuesta máxima.",
+    option4:
+      "Se observará un desplazamiento hacia la derecha de la curva dosis-respuesta del agonista, sin disminución de la respuesta máxima.",
+    correct:
+      "Se observará un desplazamiento hacia la derecha de la curva dosis-respuesta del agonista, sin disminución de la respuesta máxima.",
+  },
+  {
+    id: 25,
+    title:
+      "En un experimento en el que se administra una sustancia a una dosis fija de un antagonista irreversible en presencia de concentraciones crecientes de un agonista, observamos que…",
+    option1:
+      "Se desplaza la curva dosis-respuesta del agonista hacia la derecha sin cambios en el Emax",
+    option2:
+      "Se desplaza la curva dosis-respuesta del agonista hacia la izquierda con cambios en el Emax",
+    option3: "Disminuye la pendiente de la curva dosis-respuesta del agonista",
+    option4: "Disminuye la respuesta máxima del agonista",
+    correct: "Disminuye la respuesta máxima del agonista",
+  },
+  {
+    id: 26,
+    title:
+      "Cuál de los siguientes ejemplos se corresponde con un antagonismo competitivo reversible?",
+    option1: "El efecto del propranolol sobre los rc adrenérgicos",
+    option2: "El efecto del propranolol sobre los rc muscarínicos",
+    option3: "El efecto del isoproterenol sobre los rc adrenérgicos",
+    option4: "El efecto de la acetilcolina sobre los rc nicotínicos",
+    correct: "El efecto del propranolol sobre los rc adrenérgicos",
+  },
+  {
+    id: 27,
+    title:
+      "Cuál de los siguientes ejemplos se corresponde con un antagonismo no competitivo?",
+    option1: "El efecto del propranolol sobre los rc adrenérgicos",
+    option2: "El efecto del propranolol sobre los rc muscarínicos",
+    option3: "El efecto del isoproterenol sobre los rc adrenérgicos",
+    option4: "El efecto de la acetilcolina sobre los rc nicotínicos",
+    correct: "El efecto del propranolol sobre los rc muscarínicos",
+  },
+  {
+    id: 28,
+    title:
+      "El metoprolol es un antagonista selectivo de los rc β1 adrenérgicos. En el tratamiento crónico de la hipertensión arterial puede observarse…",
+    option1: "Regulación en más de los rc β1 postsinápticos.",
+    option2: "Regulación en menos de los rc β1 postsinápticos.",
+    option3: "Desensibilización de los rc β1 postsinápticos.",
+    option4: "Aumento de la liberación de noradrenalina.",
+    correct: "Regulación en más de los rc β1 postsinápticos.",
+  },
+  {
+    id: 29,
+    title: "En una gráfica semilogarítmica dosis-respuesta…",
+    option1:
+      "El eje Y representa la concentración de fármaco en moles por litro.",
+    option2:
+      "El eje X representa la respuesta biológica a cada dosis de fármaco.",
+    option3:
+      "El eje Y representa la respuesta biológica a cada dosis de fármaco.",
+    option4:
+      "El eje X representa la concentración de fármaco en mililitros por litro.",
+    correct:
+      "El eje Y representa la respuesta biológica a cada dosis de fármaco.",
+  },
+  {
+    id: 30,
+    title: "En relación a los antagonistas no competitivos es correcto que…",
+    option1: "Bloquean la actividad del agonista incrementando la CE50",
+    option2: "Bloquean la actividad del agonista sin modificar el Emax",
+    option3: "Bloquean la actividad del agonista incrementando el Emax",
+    option4: "Bloquean la actividad del agonista disminuyendo el Emax",
+    correct: "Bloquean la actividad del agonista disminuyendo el Emax",
+  },
+  {
+    id: 31,
+    title: "Indique cuál de las siguientes afirmaciones es incorrecta…",
+    option1:
+      "Un antagonista no competitivo desplaza la curva dosis-respuesta del agonista hacia la derecha y disminuye la respuesta máxima.",
+    option2:
+      "Un antagonista reversible desplaza la curva dosis-respuesta del agonista hacia la derecha, sin modificar la respuesta máxima.",
+    option3:
+      "La presencia de un antagonista reversible aumenta la CE50 del agonista.",
+    option4:
+      "La presencia de un antagonista reversible aumenta la eficacia del agonista.",
+    correct:
+      "La presencia de un antagonista reversible aumenta la eficacia del agonista.",
+  },
+  {
+    id: 32,
+    title:
+      "¿Qué prueba se utiliza para detectar la presencia de bacterias coliformes en el agua?",
+    option1: "Prueba de coagulasa",
+    option2: "Prueba de catalasa",
+    option3: "Prueba de oxidasa",
+    option4: "Prueba de fermentación de lactosa",
+    correct: "Prueba de fermentación de lactosa",
+  },
+  {
+    id: 33,
+    title:
+      "Se administra una droga A Ácida con pka 3 a un paciente. Considerando como pH urinario 6, se verá:",
+    option1:
+      "Aumento de la Fracción Ionizada (FI) de la droga A con una disminución de su excreción.",
+    option2: "Aumento de la FI de la droga A con aumento en su excreción",
+    option3:
+      "Aumento de la Fracción No Ionizada (FNI) de la droga A con aumento en su excreción",
+    option4: "Aumento de la FNI de la droga A con disminución en su excreción",
+    correct: "Aumento de la FI de la droga A con aumento en su excreción",
+  },
+  {
+    id: 34,
+    title:
+      "La droga X, que tiene una Vida media de 3 hs con eliminación exclusiva por metabolismo microsomal hepático y sin variaciones en el Volumen de distribución, se administra a tres grupos de pacientes. Grupo 1: metabolismo normal. Grupo 2: metabolismo acelerado. Grupo 3: metabolismo enlentecido. La meseta va a alcanzarse:",
+    option1: "En todos los grupos al mismo tiempo",
+    option2: "Primero en el grupo 1, a las 12 hs",
+    option3: "Primero en el grupo 2, en menos de 12 hs",
+    option4: "Primero en el grupo 3, en menos de 12 hs",
+    correct: "Primero en el grupo 2, en menos de 12 hs",
+  },
+  {
+    id: 35,
+    title:
+      "La absorción, distribución, metabolismo y excreción de un fármaco implican el paso a través de numerosas membranas celulares. Seleccione, de las siguientes características de la molécula, cual favorece más el pasaje a través de las mismas:",
+    option1: "Liposolubilidad y grado de ionización.",
+    option2: "Número de moléculas, liposolubilidad y grado de ionización.",
+    option3:
+      "Tamaño y estructura molecular, grado de ionización y liposolubilidad.",
+    option4:
+      "Estructura y tamaño molecular, grado de ionización y número de moléculas.",
+    correct:
+      "Tamaño y estructura molecular, grado de ionización y liposolubilidad.",
+  },
+  {
+    id: 36,
+    title:
+      "La membrana plasmática es una barrera biológica compuesta, principalmente, por una bicapa de lípidos anfipáticos y proteínas de membrana enclavadas que cumplen múltiples funciones. Esta barrera es la que deben atravesar los fármacos durante su paso por el organismo. Seleccione la correcta con respecto a los mecanismos y/o modos de transporte a través de las membranas celulares:",
+    option1:
+      "La pinocitosis y la exocitosis son mecanismos transporte importantes para moléculas de cualquier tamaño.",
+    option2:
+      "La difusión facilitada es el mecanismo de transporte más comúnmente utilizado para los fármacos.",
+    option3:
+      "La reversibilidad y la bidireccionalidad son características propias de la difusión simple.",
+    option4:
+      "La difusión simple es el mecanismo de transporte más comúnmente utilizado por los fármacos.",
+    correct:
+      "La difusión simple es el mecanismo de transporte más comúnmente utilizado por los fármacos.",
+  },
+  {
+    id: 37,
+    title:
+      "Muchos fármacos son ácidos o bases débiles que en solución acuosa están en forma ionizada y no ionizada. Seleccione la correcta con respecto a la influencia del medio en los fármacos ionizables.",
+    option1:
+      "La forma no ionizada de una base débil aumenta a medida que disminuye el ph del medio.",
+    option2:
+      "En estado estable, se acumulará un fármaco básico en el lado más básico de la membrana y viceversa.",
+    option3:
+      "La distribución de un electrolito débil depende de su pKa y el gradiente de ph a través de la membrana.",
+    option4:
+      "En estado estable se acumulará un fármaco ácido en el lado más ácido de la membrana y viceversa.",
+    correct:
+      "La distribución de un electrolito débil depende de su pKa y el gradiente de ph a través de la membrana.",
+  },
+  {
+    id: 38,
+    title:
+      "La loratadina es un antagonista de los receptores de histamina utilizado para distintas formas de alergia. Su mecanismo de acción es el mismo que el de la difenhidramina (conocido popularmente como Benadryl), sin embargo, debido a que esta última es capaz de pasar a SNC, genera sedación como efecto colateral. ¿Cuál de las siguientes afirmaciones considera apropiada para explicar este hecho?",
+    option1:
+      "La loratadina es una base débil con un pKa de 4,33 que en el plasma (ph 6,5) se encuentra mayormente ionizada.",
+    option2:
+      "La loratadina es un ácido débil con un pKa de 4,33 que en el plasma (ph 6,5) se encuentra mayormente ionizada.",
+    option3:
+      "La loratadina es un ácido débil con un pKa de 6,5 que en el plasma (ph 6,5) se encuentra mayormente ionizada.",
+    option4:
+      "La loratadina es una base débil con un pKa de 6,5 que en el plasma (ph 6,5) se encuentra mayormente ionizada.",
+    correct:
+      "La loratadina es una base débil con un pKa de 6,5 que en el plasma (ph 6,5) se encuentra mayormente ionizada.",
+  },
+  {
+    id: 39,
+    title:
+      "Aunque la difusión pasiva domina el movimiento a través de la membrana de la mayoría de los fármacos, los mecanismos mediados por transportador (transporte activo y difusión facilitada) también desempeñan funciones importantes. Seleccione la opción correcta respecto a los mecanismos de transporte de membrana mediados por proteínas:",
+    option1:
+      "Es saturable y, además, puede ser inhibido de forma competitiva por otros sustratos.",
+    option2:
+      "La velocidad de paso es, en general, más lenta que en la difusión pasiva.",
+    option3:
+      "La fuerza impulsora es siempre el gradiente electroquímico del soluto transportado.",
+    option4:
+      "La velocidad de paso, según la ley de Fick, será tanto mayor cuanto menor sea el tamaño de la molécula.",
+    correct:
+      "Es saturable y, además, puede ser inhibido de forma competitiva por otros sustratos.",
+  },
+  {
+    id: 40,
+    title:
+      "Las drogas A y B se unen exclusivamente a la albúmina mientras que la droga C se une con alta afinidad a la alfa-1-glicoproteína ácida. La droga A tiene un pKa de 1, la droga B un pKa de 6 y la droga C un pKa de 4. ¿Cómo será la velocidad de absorción de estas tres drogas en el estómago (pKa 1,5)?",
+    option1: "A>B>C",
+    option2: "B>A>C",
+    option3: "C>A>B",
+    option4: "A>C>B",
+    correct: "A>B>C",
+  },
+  {
+    id: 41,
+    title: "Señale la incorrecta",
+    option1:
+      "Como regla general una droga liposoluble tiene alta unión a proteínas, y tras el metabolismo hepático se vuelve hidrosoluble, con menor unión a proteínas, peor difusión de barreras y menor reabsorción renal.",
+    option2:
+      "Generalmente los metabolitos son inactivos o mucho menos activos, pero en ocasiones puede ser más activos, incluso más tóxicos.",
+    option3:
+      "Si el metabolito es más tóxico, tras inducir el metabolismo puede resultar la disminución de la toxicidad de la droga.",
+    option4: "Todas son correctas.",
+    correct:
+      "Si el metabolito es más tóxico, tras inducir el metabolismo puede resultar la disminución de la toxicidad de la droga.",
+  },
+  {
+    id: 42,
+    title: "Respecto al transporte",
+    option1:
+      "La albúmina tiene mayor especificidad para transportar cualquier droga.",
+    option2:
+      "La alfa-1-glicoproteína ácida transporta con mayor capacidad las drogas ácidas.",
+    option3:
+      "La albúmina tiene mayor capacidad para transportar cualquier droga.",
+    option4:
+      "La alfa-1-glicoproteína ácida transporta con mayor afinidad las drogas ácidas.",
+    correct:
+      "La albúmina tiene mayor capacidad para transportar cualquier droga.",
+  },
+  {
+    id: 43,
+    title:
+      "En un paciente con insuficiencia renal, se espera que la vida media de un fármaco eliminado por vía renal sea:",
+    option1: "Más corta",
+    option2: "Más larga",
+    option3: "Igual",
+    option4: "Depende de la fracción eliminada",
+    correct: "Más larga",
+  },
+  {
+    id: 44,
+    title:
+      "En una enfermedad hepática grave, se espera que la vida media de un fármaco metabolizado en el hígado sea:",
+    option1: "Más corta",
+    option2: "Igual",
+    option3: "Más larga",
+    option4: "Depende del grado de unión a proteínas",
+    correct: "Más larga",
+  },
+  {
+    id: 45,
+    title:
+      "Sobre la variabilidad de la respuesta farmacológica, señale la opción incorrecta:",
+    option1:
+      "La respuesta farmacológica puede ser distinta según la patología del paciente",
+    option2: "La respuesta farmacológica varía según el sexo del paciente",
+    option3: "La respuesta farmacológica varía según la edad del paciente",
+    option4: "La respuesta farmacológica no varía según el peso del paciente",
+    correct: "La respuesta farmacológica no varía según el peso del paciente",
+  },
+  {
+    id: 46,
+    title: "Sobre la farmacocinética en el embarazo, es incorrecto que:",
+    option1:
+      "El paso transplacentario de fármacos es mayor en el primer trimestre",
+    option2: "El metabolismo hepático de los fármacos puede alterarse",
+    option3: "La eliminación renal de los fármacos puede alterarse",
+    option4: "El volumen de distribución de los fármacos puede alterarse",
+    correct:
+      "El paso transplacentario de fármacos es mayor en el primer trimestre",
+  },
+  {
+    id: 47,
+    title: "Sobre la farmacocinética en neonatos, es incorrecto que:",
+    option1: "El metabolismo hepático está disminuido",
+    option2: "Eliminación renal disminuida",
+    option3: "Volumen de distribución aumentado",
+    option4: "Absorción gastrointestinal aumentada",
+    correct: "Absorción gastrointestinal aumentada",
+  },
+  {
+    id: 48,
+    title: "Sobre la farmacocinética en ancianos, es incorrecto que:",
+    option1: "Eliminación renal disminuida",
+    option2: "Metabolismo hepático disminuido",
+    option3: "Volumen de distribución aumentado",
+    option4: "Absorción gastrointestinal disminuida",
+    correct: "Volumen de distribución aumentado",
+  },
+  {
+    id: 49,
+    title:
+      "En un paciente obeso, respecto a los fármacos lipofílicos, se espera que el volumen de distribución:",
+    option1: "Aumente",
+    option2: "Disminuya",
+    option3: "Permanezca igual",
+    option4: "Varíe según el grado de unión a proteínas",
+    correct: "Aumente",
+  },
+  {
+    id: 50,
+    title: "La fracción de eliminación (Ke) de un fármaco se define como:",
+    option1: "La fracción de la dosis eliminada por minuto",
+    option2: "La fracción de la concentración plasmática eliminada por minuto",
+    option3: "La fracción de la dosis absorbida por minuto",
+    option4: "La fracción de la concentración plasmática absorbida por minuto",
+    correct: "La fracción de la concentración plasmática eliminada por minuto",
+  },
+  {
+    id: 51,
+    title: "El aclaramiento de un fármaco (Cl) se define como:",
+    option1: "El volumen de plasma del cual se elimina el fármaco por minuto",
+    option2: "El volumen de plasma del cual se absorbe el fármaco por minuto",
+    option3: "El volumen de sangre del cual se elimina el fármaco por minuto",
+    option4: "El volumen de sangre del cual se absorbe el fármaco por minuto",
+    correct: "El volumen de plasma del cual se elimina el fármaco por minuto",
+  },
+  {
+    id: 52,
+    title: "La biodisponibilidad de un fármaco se define como:",
+    option1:
+      "El porcentaje de la dosis administrada que alcanza la circulación sistémica",
+    option2:
+      "El porcentaje de la dosis administrada que se elimina por el riñón",
+    option3:
+      "El porcentaje de la dosis administrada que se metaboliza en el hígado",
+    option4:
+      "El porcentaje de la dosis administrada que se une a proteínas plasmáticas",
+    correct:
+      "El porcentaje de la dosis administrada que alcanza la circulación sistémica",
+  },
+  {
+    id: 53,
+    title: "Señale la incorrecta",
+    option1:
+      "Una droga con volumen de distribución muy alto, está muy concentrada en el plasma",
+    option2:
+      "Una droga con volumen de distribución muy alto, tiene poca concentración en el plasma",
+    option3:
+      "Una droga con volumen de distribución bajo, se encuentra principalmente en el plasma",
+    option4:
+      "Una droga con volumen de distribución bajo, tiene alta concentración en el plasma",
+    correct:
+      "Una droga con volumen de distribución muy alto, está muy concentrada en el plasma",
+  },
+  {
+    id: 54,
+    title: "Sobre la farmacodinamia, es incorrecto que:",
+    option1:
+      "Los fármacos pueden actuar por mecanismos distintos a la unión a receptores",
+    option2: "Todos los fármacos actúan uniéndose a receptores específicos",
+    option3: "Un mismo fármaco puede tener más de un sitio de acción",
+    option4:
+      "La acción de un fármaco puede depender de la interacción con enzimas",
+    correct: "Todos los fármacos actúan uniéndose a receptores específicos",
+  },
+  {
+    id: 55,
+    title: "Un agonista parcial es:",
+    option1: "Un fármaco que se une a un receptor y lo activa al máximo",
+    option2: "Un fármaco que se une a un receptor pero no lo activa",
+    option3:
+      "Un fármaco que se une a un receptor y lo activa, pero no al máximo",
+    option4: "Un fármaco que se une a un receptor y lo bloquea",
+    correct:
+      "Un fármaco que se une a un receptor y lo activa, pero no al máximo",
+  },
+  {
+    id: 56,
+    title: "Un antagonista competitivo:",
+    option1: "Se une al receptor en un sitio distinto al agonista",
+    option2: "Se une al receptor en el mismo sitio que el agonista",
+    option3: "Se une al receptor y lo activa",
+    option4: "Se une al receptor y lo bloquea de manera irreversible",
+    correct: "Se une al receptor en el mismo sitio que el agonista",
+  },
+  {
+    id: 57,
+    title: "Un antagonista no competitivo:",
+    option1: "Se une al receptor en el mismo sitio que el agonista",
+    option2: "Se une al receptor y lo activa",
+    option3: "Se une al receptor en un sitio distinto al agonista",
+    option4: "Se une al receptor y lo bloquea de manera reversible",
+    correct: "Se une al receptor en un sitio distinto al agonista",
+  },
+  {
+    id: 58,
+    title: "La potencia de un fármaco se refiere a:",
+    option1: "La cantidad de fármaco necesaria para producir un efecto",
+    option2: "La capacidad del fármaco para producir un efecto máximo",
+    option3: "La velocidad con la que el fármaco produce un efecto",
+    option4: "La duración del efecto del fármaco",
+    correct: "La cantidad de fármaco necesaria para producir un efecto",
+  },
+  {
+    id: 59,
+    title: "La eficacia de un fármaco se refiere a:",
+    option1: "La cantidad de fármaco necesaria para producir un efecto",
+    option2: "La capacidad del fármaco para producir un efecto máximo",
+    option3: "La velocidad con la que el fármaco produce un efecto",
+    option4: "La duración del efecto del fármaco",
+    correct: "La capacidad del fármaco para producir un efecto máximo",
+  },
+  {
+    id: 60,
+    title: "La selectividad de un fármaco se refiere a:",
+    option1: "La capacidad del fármaco para unirse a un receptor específico",
+    option2: "La cantidad de fármaco necesaria para producir un efecto",
+    option3: "La velocidad con la que el fármaco produce un efecto",
+    option4: "La duración del efecto del fármaco",
+    correct: "La capacidad del fármaco para unirse a un receptor específico",
+  },
+  {
+    id: 61,
+    title:
+      "¿Cuál de las siguientes afirmaciones es incorrecta respecto a los opioides?",
+    option1:
+      "La codeína es un agonista parcial muy útil como agente antitusivo",
+    option2:
+      "El fentanilo es un agonista sintético, hasta 80 veces más potente que la morfina",
+    option3:
+      "La nalbufina es un agonista completo de receptores Mu, muy útil para el tratamiento del dolor",
+    option4:
+      "El dextropropoxifeno es un opioide mucho más potente que la morfina y por ende con mayor frecuencia de efectos adversos",
+    correct:
+      "El dextropropoxifeno es un opioide mucho más potente que la morfina y por ende con mayor frecuencia de efectos adversos",
+  },
+  {
+    id: 62,
+    title: "¿A cuántos mg de betametasona equivalen 125 mg de Triamcinolona?",
+    option1: "167",
+    option2: "23",
+    option3: "74",
+    option4: "130",
+    correct: "167",
+  },
+  {
+    id: 63,
+    title:
+      "¿Cuál de los siguientes es un efecto adverso característico del Rasburicase?",
+    option1: "Diarrea",
+    option2: "Depresión de médula ósea",
+    option3: "Hipersensibilidad",
+    option4: "Cefaleas frontales",
+    correct: "Hipersensibilidad",
+  },
+  {
+    id: 64,
+    title:
+      "Indique qué AINE sería de elección como analgésico en una paciente embarazada de 30 semanas:",
+    option1: "Indometacina",
+    option2: "Ketorolac",
+    option3: "AAS",
+    option4: "Paracetamol",
+    correct: "Paracetamol",
+  },
+  {
+    id: 65,
+    title:
+      "¿Qué relajante muscular usaría en un paciente con insuficiencia renal?",
+    option1: "Atracurio",
+    option2: "Succinilcolina",
+    option3: "Pancuronio",
+    option4: "Mivacurio",
+    correct: "Atracurio",
+  },
+  {
+    id: 66,
+    title:
+      "Llega a la guardia de su hospital un paciente en coma, con pupilas mióticas y depresión respiratoria. ¿Qué conducta tomaría?",
+    option1: "Sospecha una intoxicación con opioides e indica naloxona iv",
+    option2: "Sospecha una intoxicación con organofosforados e indica atropina",
+    option3:
+      "Sospecha una intoxicación con opioides e indica naltrexona vía oral",
+    option4:
+      "Sospecha una intoxicación con organofosforados e indica pralidoxima",
+    correct: "Sospecha una intoxicación con opioides e indica naloxona iv",
+  },
+  {
+    id: 67,
+    title: "Con respecto a los opioides, es correcto afirmar que:",
+    option1:
+      "La codeína es un agonista parcial muy útil como agente antitusivo",
+    option2:
+      "El fentanilo es un agonista sintético, hasta 80 veces más potente que la morfina",
+    option3:
+      "La nalbufina es un agonista completo de receptores Mu, muy útil para el tratamiento del dolor",
+    option4:
+      "El dextropropoxifeno es un opioide mucho más potente que la morfina y por ende con mayor frecuencia de efectos adversos",
+    correct:
+      "El fentanilo es un agonista sintético, hasta 80 veces más potente que la morfina",
+  },
+  {
+    id: 68,
+    title:
+      "¿Qué estrategia terapéutica no es útil para minimizar la inhibición del eje Hipotalamo-Hipofiso-Adrenal en un tratamiento prolongado con corticoides?",
+    option1:
+      "Administrar 2/4 de la dosis en la mañana, 1/4 en la tarde y 1/4 en la cena",
+    option2: "Utilizarlos por vía tópica o inhalatoria",
+    option3: "Utilizar la mínima dosis posible",
+    option4: "Administrar el fármaco en días alternos",
+    correct:
+      "Administrar 2/4 de la dosis en la mañana, 1/4 en la tarde y 1/4 en la cena",
+  },
+  {
+    id: 69,
+    title: "El rasburicase es un fármaco utilizado para:",
+    option1: "Tratamiento del dolor, muy útil como analgésico",
+    option2:
+      "Tratamiento del asma infantil, muy útil para tratamientos crónicos",
+    option3:
+      "Tratamiento de hiperuricemia maligna, ya que cataliza la oxidación de ácido úrico a alantoína",
+    option4:
+      "Tratamiento del ataque agudo de gota, ya que es útil como uricosúrico",
+    correct:
+      "Tratamiento de hiperuricemia maligna, ya que cataliza la oxidación de ácido úrico a alantoína",
+  },
+  {
+    id: 70,
+    title:
+      "En un paciente en tratamiento crónico con corticoides vía oral, puedo observar como efecto adverso todos los siguientes menos:",
+    option1: "Aspecto cushingoide",
+    option2: "Osteoporosis",
+    option3: "Alteraciones cutáneas",
+    option4: "Hipoglucemia",
+    correct: "Hipoglucemia",
+  },
+  {
+    id: 71,
+    title: "El mecanismo de acción de la lidocaína reside en:",
+    option1: "El bloqueo de canales de Calcio voltaje dependiente",
+    option2: "La estimulación de receptores Mu",
+    option3: "El bloqueo de canales de sodio voltaje dependiente",
+    option4: "La estimulación de receptores NMDA",
+    correct: "El bloqueo de canales de sodio voltaje dependiente",
+  },
+  {
+    id: 72,
+    title:
+      "La hipertermia maligna es una condición patológica que se presenta principalmente al asociar:",
+    option1: "Lidocaína y atracurio",
+    option2: "Pancuronio y bupivacaína",
+    option3: "Halotano y succinilcolina",
+    option4: "Sevofluorano y propofol",
+    correct: "Halotano y succinilcolina",
+  },
+  {
+    id: 73,
+    title:
+      "En cuanto a la dipirona, ¿cuál de las siguientes afirmaciones es incorrecta?",
+    option1: "Es un AINE derivado de la anilina con poco efecto antipirético",
+    option2: "Es un AINE que se encuentra dentro del grupo de las pirazolonas",
+    option3: "Es muy útil como antipirético y analgésico",
+    option4:
+      "Puede producir como efecto adverso agranulocitosis y shock anafiláctico",
+    correct: "Es un AINE derivado de la anilina con poco efecto antipirético",
+  },
+  {
+    id: 74,
+    title: "Respecto a los inhibidores selectivos de la COX-2:",
+    option1:
+      "Tienen mayor riesgo de producir efectos adversos a nivel gastrointestinal que los AINE que actúan sobre la COX-1",
+    option2:
+      "A bajas dosis, se utilizan como profilaxis para eventos cardioembólicos",
+    option3:
+      "Producen eventos tromboembólicos como uno de sus efectos adversos más graves",
+    option4: "El celecoxib presenta una vida media de aproximadamente 48 horas",
+    correct: "El celecoxib presenta una vida media de aproximadamente 48 horas",
+  },
+  {
+    id: 75,
+    title:
+      "Ordene los siguientes fármacos según su riesgo de provocar lesión gastrointestinal (de menor riesgo a mayor riesgo):",
+    option1: "Ibuprofeno – Celecoxib – Indometacina – Ketorolac",
+    option2: "Ibuprofeno – Indometacina – Ketorolac – Celecoxib",
+    option3: "Celecoxib – Indometacina – Ibuprofeno – Ketorolac",
+    option4: "Celecoxib – Ibuprofeno – Indometacina – Ketorolac",
+    correct: "Celecoxib – Ibuprofeno – Indometacina – Ketorolac",
+  },
+  {
+    id: 76,
+    title:
+      "¿Cuál de las siguientes son acciones farmacológicas de los glucocorticoides?",
+    option1: "Generan un aumento de la inmunidad ya que producen neutrofilia",
+    option2:
+      "Son inmunosupresores, pero generan aumento de la respuesta alérgica, ya que hay más ácido araquidónico disponible hacia la vía de leucotrienos",
+    option3:
+      "Son pro-inflamatorios ya que inhiben la expresión de COX-1 pero no de COX-2 en tejidos inflamados",
+    option4:
+      "Solo son antipiréticos si la fiebre corresponde a reacciones inflamatorias, pero no pueden evitar el efecto piretógeno de las endotoxinas",
+    correct:
+      "Son inmunosupresores, pero generan aumento de la respuesta alérgica, ya que hay más ácido araquidónico disponible hacia la vía de leucotrienos",
+  },
+  {
+    id: 77,
+    title:
+      "¿Respecto a los glucocorticoides, cuál de los siguientes corresponde a un efecto adverso agudo?",
+    option1: "Osteoporosis",
+    option2: "Psicosis",
+    option3: "Pérdida de masa muscular",
+    option4: "Formación de estrías",
+    correct: "Psicosis",
+  },
+  {
+    id: 78,
+    title:
+      "¿Cuál de los siguientes no es un efecto adverso debido al uso prolongado de los glucocorticoides?",
+    option1: "Osteoporosis",
+    option2: "Hipertensión arterial",
+    option3: "Insuficiencia suprarrenal aguda",
+    option4: "Cataratas",
+    correct: "Insuficiencia suprarrenal aguda",
+  },
+  {
+    id: 79,
+    title:
+      "Elida, de 64 años, se encuentra tomando glucocorticoides y aspirina desde hace más de un año. El sábado por la mañana sufre una fractura de cadera debido a una caída de su propia altura y, debido a esto, es internada para someterse a una cirugía de reemplazo. Seleccione la conducta adecuada en relación con la medicación que se encuentra tomando la paciente.",
+    option1:
+      "Debería disminuirse de forma gradual la dosis del glucocorticoide y suspender la aspirina 10 días antes de la cirugía.",
+    option2:
+      "Debería suspenderse la administración de aspirina y aumentar la dosis del glucocorticoide 10 días antes de la cirugía.",
+    option3:
+      "Debería suspenderse la administración de aspirina y mantener la misma dosis del glucocorticoide durante la cirugía.",
+    option4:
+      "Debería aumentarse la dosis del glucocorticoide antes de la intervención y suspenderse la administración de aspirina 10 días antes de la cirugía",
+    correct:
+      "Debería suspenderse la administración de aspirina y mantener la misma dosis del glucocorticoide durante la cirugía.",
+  },
+  {
+    id: 80,
+    title:
+      "¿Cuál de las siguientes drogas puede disminuir la eficacia del probenecid?",
+    option1: "Paracetamol",
+    option2: "Morfina",
+    option3: "Colchicina",
+    option4: "Aspirina",
+    correct: "Aspirina",
+  },
+  {
+    id: 81,
+    title:
+      "¿Cuál de los siguientes fármacos utilizaría como tratamiento de una hiperuricemia secundaria a un síndrome de lisis tumoral?",
+    option1: "Colchicina",
+    option2: "Benzbromarona",
+    option3: "Febuxostat",
+    option4: "Rasburicasa",
+    correct: "Rasburicasa",
+  },
+  {
+    id: 82,
+    title: "¿Cuál de los siguientes no es un efecto adverso de la morfina?",
+    option1: "Bradicardia e hipotensión ortostática",
+    option2: "Incontinencia urinaria",
+    option3: "Disminución del peristaltismo y secreciones",
+    option4: "Disminución de las contracciones en el útero gravídico",
+    correct: "Disminución de las contracciones en el útero gravídico",
+  },
+  {
+    id: 83,
+    title:
+      "La Buprenorfina es un fármaco utilizado en el proceso de deshabituación opioidea al igual que la Metadona, pero a diferencia de esta última tienen menos probabilidades de provocar una intoxicación opioidea. ¿A qué se debe esto?",
+    option1: "A su muy baja biodisponibilidad por vía oral",
+    option2: "A su actividad intrínseca < 1",
+    option3: "A su rápida metabolización hepática",
+    option4: "A su alta interacción con otras drogas",
+    correct: "A su actividad intrínseca < 1",
+  },
+  {
+    id: 84,
+    title: "En cuanto a la morfina:",
+    option1: "Su metabolito más activo es la morfina-3-glucurónido",
+    option2: "Se puede administrar por vía intratecal",
+    option3:
+      "Es uno de los opioides que no produce constipación como efecto adverso",
+    option4: "Un signo típico de su intoxicación es la midriasis arreactiva",
+    correct: "Su metabolito más activo es la morfina-3-glucurónido",
+  },
+  {
+    id: 85,
+    title: "Respecto a los objetivos de la anestesia, indique la correcta:",
+    option1:
+      "Bloqueo sensitivo (analgesia), para el cual puedo usar drogas como atropina",
+    option2:
+      "Bloqueo de la conciencia (sedación), para la cual puedo usar opioides",
+    option3: "Bloqueo autonómico, puedo usar benzodiacepinas",
+    option4: "Bloqueo motor, para el cual puedo usar relajantes musculares",
+    correct:
+      "Bloqueo de la conciencia (sedación), para la cual puedo usar opioides",
+  },
+  {
+    id: 86,
+    title:
+      "¿Cuál de los siguientes es un líquido volátil utilizado en anestesia?",
+    option1: "Ciclopropano",
+    option2: "Tiopental sódico",
+    option3: "Sevofluorano",
+    option4: "Ketamina",
+    correct: "Sevofluorano",
+  },
+  {
+    id: 87,
+    title: "¿Qué relajante usaría ante un paciente con falla renal?",
+    option1:
+      "Atracurio porque se metaboliza a nivel hepático y se elimina vía biliar",
+    option2: "Tubocurarina (curare) ya que no tiene metabolismo activo",
+    option3: "Pancuronio ya que sufre degradación de hoffman",
+    option4: "Atracurio ya que sufre degradación de hoffman",
+    correct: "Atracurio ya que sufre degradación de hoffman",
+  },
+];
+
 export function get_Fisio_Question() {
   function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -1552,6 +2520,21 @@ export function get_Fisio_Question() {
   }
   let randomNumber = getRandomInt(1, 40);
   let randomQuestion = fisioQuestions.find((e) => e.id === randomNumber);
+
+  return {
+    type: FETCH_QUESTION,
+    payload: randomQuestion,
+  };
+}
+
+export function get_Farmaco_Question() {
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+  let randomNumber = getRandomInt(1, 40);
+  let randomQuestion = farmacoQuestions.find((e) => e.id === randomNumber);
 
   return {
     type: FETCH_QUESTION,

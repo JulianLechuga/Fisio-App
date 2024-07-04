@@ -21,6 +21,9 @@ export default function Nav() {
             <NavLink to="/micro" className="nav-link">Microbiología</NavLink>
           </li>
           <li className="nav-item">
+            <NavLink to="/farmaco" className="nav-link">Farmacología</NavLink>
+          </li>
+          <li className="nav-item">
             <NavLink to="/about" className="nav-link">Conoce más</NavLink>
           </li>
         </ul>

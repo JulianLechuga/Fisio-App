@@ -9,6 +9,7 @@ export default function Home() {
       <div className={styles.linkContainer}>
         <Link to="/fisio" className={styles.link}>Fisiología</Link>
         <Link to="/micro" className={styles.link}>Microbiología</Link>
+        <Link to="/farmaco" className={styles.link}>Farmacología</Link>
       </div>
     </div>
   );

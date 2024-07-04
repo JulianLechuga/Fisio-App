@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { get_Fisio_Question, get_Micro_Question } from "../store/actions";
+import { get_Farmaco_Question, get_Fisio_Question, get_Micro_Question } from "../store/actions";
 import styles from "./css/question.module.css";
 
-export default function Questions(questions) {
+export default function Questions() {
   let stateQuestion = useSelector((state) => state.randomQuestion);
   let dispatch = useDispatch();
   const location = useLocation();
@@ -17,6 +17,8 @@ export default function Questions(questions) {
       dispatch(get_Fisio_Question());
     } else if (category === "micro") {
       dispatch(get_Micro_Question());
+    } else if (category === "farmaco") {
+      dispatch(get_Farmaco_Question());
     }
   }, [dispatch, location.pathname]);
 
@@ -26,6 +28,8 @@ export default function Questions(questions) {
       dispatch(get_Fisio_Question());
     } else if (url.includes("micro")) {
       dispatch(get_Micro_Question());
+    } else if (url.includes("farmaco")) {
+      dispatch(get_Farmaco_Question());
     } else {
       console.error("URL does not contain fisio or micro keyword");
     }
@@ -70,6 +74,8 @@ export default function Questions(questions) {
       dispatch(get_Fisio_Question());
     } else if (url.includes("micro")) {
       dispatch(get_Micro_Question());
+    } else if (url.includes("farmaco")) {
+      dispatch(get_Farmaco_Question());
     } else {
       console.error("URL does not contain fisio or micro keyword");
     }
