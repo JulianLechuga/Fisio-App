@@ -15,6 +15,9 @@ export default function Nav() {
             <NavLink exact to="/" className="nav-link">Modo Clásico</NavLink>
           </li>
           <li className="nav-item">
+            <NavLink exact to="/drill" className="nav-link">Simulacro exámen</NavLink>
+          </li>
+          <li className="nav-item">
             <NavLink to="/fisio" className="nav-link">Fisiologia</NavLink>
           </li>
           <li className="nav-item">

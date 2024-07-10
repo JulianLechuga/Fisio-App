@@ -1,0 +1,117 @@
+.container {
+    display: flex;
+    padding: 20px;
+    align-items: flex-start;
+  }
+  
+  .questionsContainer {
+    flex: 2;
+    margin-right: 20px;
+  }
+  
+  .infoContainer {
+    background-color: rgba(255, 255, 255, 0.986);
+    padding: 3px;
+    border-radius: 17px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  
+  .progressContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .progressSquare {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
+  .answered {
+    background-color: green;
+  }
+  
+  .wholeQuestion {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #000;
+    background-color: #fff;
+  }
+  
+  .questionTitle {
+    font-size: x-large;
+    margin-bottom: 10px;
+  }
+  
+  .optionsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .questionOption {
+    background-color: white;
+    font-weight: bold;
+    font-size: larger;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .questionOption.selected {
+    background-color: yellow;
+  }
+  
+  .pageButton {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .paginationControls {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .navigationButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .navigationButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .summary {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .questionsContainer {
+      margin-right: 0;
+    }
+  }
+  

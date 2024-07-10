@@ -1,6 +1,7 @@
-import axios from "axios";
 export const FETCH_QUESTION = "FETCH_QUESTION";
 export const FETCH_LIST = "FETCH_LIST";
+export const GENERATE_EXAM = "GENERATE_EXAM";
+export const RESET_EXAM = "RESET_EXAM";
 
 let fisioQuestions = [
   {
@@ -115,12 +116,13 @@ let fisioQuestions = [
   },
   {
     id: 11,
-    title: "¿Y la 11?",
-    option1: "a",
-    option2: "a",
-    option3: "a",
-    option4: "a",
-    correct: "a",
+    title:
+      "¿Cuál es la principal función de las células de los islotes de Langerhans en el páncreas?",
+    option1: "Producción de enzimas digestivas.",
+    option2: "Regulación del metabolismo de la glucosa.",
+    option3: "Filtración de toxinas en la sangre.",
+    option4: "Absorción de nutrientes en el intestino delgado.",
+    correct: "Regulación del metabolismo de la glucosa."
   },
   {
     id: 12,
@@ -2557,10 +2559,38 @@ export function get_Micro_Question() {
   };
 }
 
-export function get_Fisio_Question_List(search) {
-  return function (dispatch) {
-    axios(`/videogames?name=${search}`).then((res) =>
-      dispatch({ type: FETCH_LIST, payload: res.data })
-    );
+export function generate_exam_model(subject, amount = 40) {
+  if (!subject) {
+    throw new Error('No se especificó el tema');
+  }
+  let questionsArray;
+  if (subject === 'fisio') {
+    questionsArray = fisioQuestions;
+  } else if (subject === 'farmaco') {
+    questionsArray = farmacoQuestions;
+  } else if (subject === 'micro') {
+    questionsArray = microQuestions;
+  } else {
+    throw new Error('No se especificó el tema');
+  }
+
+  const randomQuestions = [];
+  const totalQuestions = questionsArray.length;
+  for (let i = 0; i < amount; i++) {
+    const randomIndex = Math.floor(Math.random() * totalQuestions);
+    randomQuestions.push(questionsArray[randomIndex]);
+  }
+
+  return {
+    type: GENERATE_EXAM,
+    payload: randomQuestions,
+  };
+}
+
+export function reset_exam() {
+
+  return {
+    type: RESET_EXAM,
+    payload: [],
   };
 }
