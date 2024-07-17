@@ -1,4 +1,4 @@
-.wholeQuestion{
+.wholeQuestion {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -6,7 +6,7 @@
     transform: translate(-50%, -50%);
 }
 
-.questionTitle{
+.questionTitle {
     border: 5px solid black;
     background-color: white;
     margin: auto;
@@ -17,7 +17,7 @@
     font-size: x-large;
 }
 
-.questionOption{
+.questionOption {
     background-color: white;
     font: bold;
     font-size: larger;
@@ -32,7 +32,7 @@
     cursor: pointer;
 }
 
-.questionTitleGood{
+.questionTitleGood {
     border: 5px solid black;
     background-color: rgb(37, 199, 53);
     margin: auto;
@@ -44,7 +44,7 @@
     animation: shakeGood 0.55s;
 }
 
-.questionTitleBad{
+.questionTitleBad {
     border: 5px solid black;
     background-color: red;
     margin: auto;
@@ -56,7 +56,7 @@
     animation: shakeGood 0.35s infinite;
 }
 
-.questionOptionGood{
+.questionOptionGood {
     background-color: rgb(37, 199, 53);
     font: bold;
     font-size: larger;
@@ -72,7 +72,23 @@
     animation: shakeGood 0.55s;
 }
 
-.questionOptionBad{
+.questionOptionGoodMark {
+    background-color: rgb(40, 223, 183);
+    font: bold;
+    font-size: larger;
+    max-width: 15%;
+    min-width: 5%;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    margin: 8px;
+    border-radius: 25px;
+    cursor: pointer;
+    animation: shakeGood 0.55s;
+}
+
+.questionOptionBad {
     background-color: rgb(231, 105, 105);
     font: bold;
     font-size: larger;
@@ -91,12 +107,12 @@
 @keyframes shakeGood {
     0% { transform: rotate(0deg); }
     25% { transform: rotate(5deg); }
-    50% { transform: rotate(0eg); }
+    50% { transform: rotate(0deg); }
     75% { transform: rotate(-5deg); }
     100% { transform: rotate(0deg); }
-  };
+}
 
-.resetQuestion{
+.resetQuestion {
     border: 2px solid black;
     margin-top: 5px;
     width: 55%;
@@ -111,7 +127,7 @@
     cursor: pointer;
 }
 
-.resetQuestion:hover{
+.resetQuestion:hover {
     border: 2px solid black;
     margin-top: 5px;
     align-items: center;
@@ -121,33 +137,41 @@
     border-radius: 25px;
     cursor: pointer;
     transition: all .2s ease-in-out;
-    transform: scale(1.3);
+    transform: scale(1.05);
     background-color: rgb(21, 177, 220);
     cursor: pointer;
 }
 
-.questionOption:hover{
+.questionOption:hover {
     transition: all .2s ease-in-out;
-    transform: scale(1.3);
+    transform: scale(1.05);
     background-color: rgb(242, 250, 96);
     cursor: pointer;
 }
 
-@media(max-width:600px){
-    .wholeQuestion{
+.questionOptionSelectedCorrect {
+    background-color: rgb(37, 199, 53); 
+}
+
+.questionOptionSelectedIncorrect {
+    background-color: rgb(231, 105, 105);
+}
+
+@media (max-width: 600px) {
+    .wholeQuestion {
         position: absolute;
         border-radius: 25px;
         height: fit-content;
         max-height: 75%;
         overflow-wrap: normal;
-        overflow:scroll;
+        overflow: scroll;
         top: 50%;
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%);
     }
 
-    .questionTitle{
+    .questionTitle {
         border: 5px solid black;
         background-color: white;
         margin: auto;
@@ -159,7 +183,7 @@
         font-size: x-large;
     }
 
-    .questionOption{
+    .questionOption {
         background-color: white;
         font: bold;
         font-size: larger;
@@ -174,7 +198,7 @@
         cursor: pointer;
     }
 
-    .questionTitleGood{
+    .questionTitleGood {
         border: 5px solid black;
         margin: auto;
         margin-top: 60px;
@@ -187,7 +211,7 @@
         animation: shakeGood 0.55s;
     }
     
-    .questionTitleBad{
+    .questionTitleBad {
         border: 5px solid black;
         background-color: red;
         color: black;
@@ -201,7 +225,7 @@
         animation: shakeGood 0.35s infinite;
     }
     
-    .questionOptionGood{
+    .questionOptionGood {
         background-color: rgb(37, 199, 53);
         font: bold;
         font-size: larger;
@@ -213,10 +237,27 @@
         display: inline-flex;
         margin: 8px;
         border-radius: 25px;
+        cursor: pointer;
         animation: shakeGood 0.55s;
     }
     
-    .questionOptionBad{
+    .questionOptionGoodMark {
+        background-color: rgb(40, 223, 183);
+        font: bold;
+        font-size: larger;
+        max-width: 100%;
+        min-width: fit-content;
+        padding: 8px;
+        align-items: center;
+        justify-content: center;
+        display: inline-flex;
+        margin: 8px;
+        border-radius: 25px;
+        cursor: pointer;
+        animation: shakeGood 0.55s;
+    }
+    
+    .questionOptionBad {
         background-color: rgb(231, 105, 105);
         font: bold;
         font-size: larger;
@@ -228,11 +269,11 @@
         display: inline-flex;
         margin: 8px;
         border-radius: 25px;
+        cursor: pointer;
         animation: shakeGood 0.35s infinite;
     }
-    
 
-    .resetQuestion{
+    .resetQuestion {
         border: 2px solid black;
         margin-top: 5px;
         width: 33%;
@@ -247,23 +288,22 @@
     }
 }
 
-
-@media(max-width:450px){
-    .wholeQuestion{
+@media (max-width: 450px) {
+    .wholeQuestion {
         position: absolute;
         border-radius: 25px;
         margin-top: 25px;
         height: fit-content;
         max-height: 75%;
         overflow-wrap: normal;
-        overflow:scroll;
+        overflow: scroll;
         top: 50%;
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%);
     }
 
-    .questionTitle{
+    .questionTitle {
         border: 5px solid black;
         background-color: white;
         margin: auto;
@@ -276,7 +316,7 @@
         font-size: x-large;
     }
 
-    .questionOption{
+    .questionOption {
         background-color: white;
         font: bold;
         font-size: larger;
@@ -291,7 +331,7 @@
         cursor: pointer;
     }
 
-    .questionTitleGood{
+    .questionTitleGood {
         border: 5px solid black;
         margin: auto;
         max-height: 65%;
@@ -305,7 +345,7 @@
         animation: shakeGood 0.55s;
     }
     
-    .questionTitleBad{
+    .questionTitleBad {
         border: 5px solid black;
         background-color: red;
         margin: auto;
@@ -319,7 +359,7 @@
         animation: shakeGood 0.35s infinite;
     }
     
-    .questionOptionGood{
+    .questionOptionGood {
         background-color: rgb(37, 199, 53);
         font: bold;
         font-size: larger;
@@ -335,7 +375,23 @@
         animation: shakeGood 0.55s;
     }
     
-    .questionOptionBad{
+    .questionOptionGoodMark {
+        background-color: rgb(40, 223, 183);
+        font: bold;
+        font-size: larger;
+        max-width: 100%;
+        min-width: fit-content;
+        padding: 18px;
+        align-items: center;
+        justify-content: center;
+        display: inline-flex;
+        margin: 8px;
+        border-radius: 25px;
+        cursor: pointer;
+        animation: shakeGood 0.55s;
+    }
+    
+    .questionOptionBad {
         background-color: rgb(231, 105, 105);
         color: black;
         font: bold;
@@ -352,7 +408,7 @@
         animation: shakeGood 0.35s infinite;
     }
 
-    .resetQuestion{
+    .resetQuestion {
         border: 2px solid black;
         margin-top: 5px;
         width: fit-content;

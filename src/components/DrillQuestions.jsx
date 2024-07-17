@@ -11,7 +11,7 @@ export default function DrillQuestions() {
   const history = useHistory();
   const category = location.pathname.split("/")[2];
   const [currentPage, setCurrentPage] = useState(0);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(40); // Limite a 40 preguntas hardcodeado
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [totalAnswered, setTotalAnswered] = useState(0);
   const [timeLeft, setTimeLeft] = useState(60 * 60);
@@ -19,11 +19,8 @@ export default function DrillQuestions() {
   const [score, setScore] = useState(0);
 
   useEffect(() => {
-    setAmount(40); // Limite a 40 preguntas hardcodeado
-  }, []);
-
-  useEffect(() => {
     if (category === "fisio" || category === "micro" || category === "farmaco") {
+      setAmount(40);
       dispatch(generate_exam_model(category, amount));
     }
   }, [dispatch, category, amount]);
@@ -62,6 +59,17 @@ export default function DrillQuestions() {
   }, [history, location.pathname, totalAnswered]);
 
   useEffect(() => {
+    const finishAttempt = () => {
+      setIsAttemptFinished(true);
+      const correctAnswers = Object.keys(selectedAnswers).reduce((acc, key) => {
+        if (selectedAnswers[key] === stateQuestions[key].correct) {
+          return acc + 1;
+        }
+        return acc;
+      }, 0);
+      setScore(correctAnswers);
+    };
+
     const timer = setInterval(() => {
       setTimeLeft((prevTime) => {
         if (prevTime <= 1) {
@@ -74,7 +82,7 @@ export default function DrillQuestions() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [selectedAnswers, stateQuestions]);
 
   const handleAnswer = (questionIndex, answer) => {
     if (isAttemptFinished) return;
@@ -88,8 +96,8 @@ export default function DrillQuestions() {
 
   const finishAttempt = () => {
     setIsAttemptFinished(true);
-    const correctAnswers = stateQuestions.reduce((acc, question, index) => {
-      if (selectedAnswers[index] === question.correctOption) {
+    const correctAnswers = Object.keys(selectedAnswers).reduce((acc, key) => {
+      if (selectedAnswers[key] === stateQuestions[key].correct) {
         return acc + 1;
       }
       return acc;
@@ -115,9 +123,7 @@ export default function DrillQuestions() {
     }
   };
 
-  const questionsToDisplay = isAttemptFinished
-    ? stateQuestions
-    : stateQuestions.slice(currentPage * 5, (currentPage + 1) * 5);
+  const questionsToDisplay = stateQuestions.slice(currentPage * 5, (currentPage + 1) * 5);
 
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
@@ -129,11 +135,20 @@ export default function DrillQuestions() {
     if (!isAttemptFinished) {
       return selectedAnswers[questionIndex] === option ? styles.selected : "";
     }
-    if (option === stateQuestions[questionIndex].correctOption) {
-      return styles.correct;
+    if (stateQuestions[questionIndex]) {
+      if (option === stateQuestions[questionIndex].correct) {
+        return `${styles.correct} ${styles.selected}`;
+      }
+      if (selectedAnswers[questionIndex] === option) {
+        return styles.incorrect;
+      }
     }
-    if (selectedAnswers[questionIndex] === option) {
-      return styles.incorrect;
+    return "";
+  };
+
+  const getCorrectOptionStyle = (questionIndex, option) => {
+    if (isAttemptFinished && selectedAnswers[questionIndex] !== stateQuestions[questionIndex].correct && option === stateQuestions[questionIndex].correct) {
+      return styles.questionOptionGoodMark;
     }
     return "";
   };
@@ -145,11 +160,22 @@ export default function DrillQuestions() {
           <div key={index} className={styles.wholeQuestion}>
             <h2 className={styles.questionTitle}>{question.title}</h2>
             <div className={styles.optionsContainer}>
-              {[question.option1, question.option2, question.option3, question.option4].map((option, i) => (
+              {[
+                question.option1,
+                question.option2,
+                question.option3,
+                question.option4,
+              ].map((option, i) => (
                 <button
                   key={i}
                   onClick={() => handleAnswer(currentPage * 5 + index, option)}
-                  className={`${styles.questionOption} ${getButtonStyle(currentPage * 5 + index, option)}`}
+                  className={`${styles.questionOption} ${getButtonStyle(
+                    currentPage * 5 + index,
+                    option
+                  )} ${getCorrectOptionStyle(
+                    currentPage * 5 + index,
+                    option
+                  )}`}
                   disabled={isAttemptFinished}
                 >
                   {option}
@@ -158,25 +184,33 @@ export default function DrillQuestions() {
             </div>
           </div>
         ))}
-        {!isAttemptFinished && (
-          <div className={styles.paginationControls}>
-            <button onClick={prevPage} disabled={currentPage === 0} className={styles.pageButton}>
-              Anterior
-            </button>
-            {[...Array(Math.ceil(stateQuestions.length / 5)).keys()].map((page) => (
-              <button key={page} onClick={() => goToPage(page)} className={styles.pageButton}>
+        <div className={styles.paginationControls}>
+          <button
+            onClick={prevPage}
+            disabled={currentPage === 0}
+            className={styles.pageButton}
+          >
+            Anterior
+          </button>
+          {[...Array(Math.ceil(stateQuestions.length / 5)).keys()].map(
+            (page) => (
+              <button
+                key={page}
+                onClick={() => goToPage(page)}
+                className={styles.pageButton}
+              >
                 {page + 1}
               </button>
-            ))}
-            <button
-              onClick={nextPage}
-              disabled={(currentPage + 1) * 5 >= stateQuestions.length}
-              className={styles.pageButton}
-            >
-              Siguiente
-            </button>
-          </div>
-        )}
+            )
+          )}
+          <button
+            onClick={nextPage}
+            disabled={(currentPage + 1) * 5 >= stateQuestions.length}
+            className={styles.pageButton}
+          >
+            Siguiente
+          </button>
+        </div>
       </div>
       <div className={styles.infoContainer}>
         <div className={styles.progressContainer}>
@@ -194,12 +228,20 @@ export default function DrillQuestions() {
         <div className={styles.summary}>
           {isAttemptFinished ? (
             <p>
-              {score >= (stateQuestions.length * 0.6) ? "Aprobaste" : "No Aprobaste"} con una puntuación de {score}/{stateQuestions.length}
+              {score >= stateQuestions.length * 0.6
+                ? "Aprobaste"
+                : "No Aprobaste"}{" "}
+              con una puntuación de {score}/{stateQuestions.length}
             </p>
           ) : (
             <>
-              <p>Página: {currentPage + 1} / {Math.ceil(stateQuestions.length / 5)}</p>
-              <p>Preguntas respondidas: {totalAnswered} / {stateQuestions.length}</p>
+              <p>
+                Página: {currentPage + 1} /{" "}
+                {Math.ceil(stateQuestions.length / 5)}
+              </p>
+              <p>
+                Preguntas respondidas: {totalAnswered} / {stateQuestions.length}
+              </p>
               <p>Tiempo restante: {formatTime(timeLeft)}</p>
             </>
           )}

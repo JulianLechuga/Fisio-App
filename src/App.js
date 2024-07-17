@@ -7,6 +7,8 @@ import About from "./components/About";
 import "./App.css";
 import Drill from "./components/Drill";
 import DrillQuestions from "./components/DrillQuestions";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function App() {
   return (

@@ -9,10 +9,9 @@ export default function Questions() {
   let dispatch = useDispatch();
   const location = useLocation();
   const url = window.location.href.toLowerCase();
-  
+
   useEffect(() => {
     const category = location.pathname.split("/")[1];
-  
     if (category === "fisio") {
       dispatch(get_Fisio_Question());
     } else if (category === "micro") {
@@ -23,7 +22,6 @@ export default function Questions() {
   }, [dispatch, location.pathname]);
 
   function endQuestion() {
-
     if (url.includes("fisio")) {
       dispatch(get_Fisio_Question());
     } else if (url.includes("micro")) {
@@ -33,7 +31,6 @@ export default function Questions() {
     } else {
       console.error("URL does not contain fisio or micro keyword");
     }
-  
     document.getElementById("title").className = styles.questionTitle;
     document.getElementById("option1").disabled = false;
     document.getElementById("option2").disabled = false;
@@ -47,28 +44,38 @@ export default function Questions() {
   }
 
   let handleAnswer = (e) => {
-    document.getElementById("option1").disabled = true;
-    document.getElementById("option2").disabled = true;
-    document.getElementById("option3").disabled = true;
-    document.getElementById("option4").disabled = true;
-    document.getElementById("reset").disabled = true;
-    if (e.target.outerText === stateQuestion.correct) {
-      document.getElementById("title").className = styles.questionTitleGood;
-      document.getElementById("option1").className = styles.questionOptionGood;
-      document.getElementById("option2").className = styles.questionOptionGood;
-      document.getElementById("option3").className = styles.questionOptionGood;
-      document.getElementById("option4").className = styles.questionOptionGood;
-      setTimeout(endQuestion, 4000);
-    } else {
-      document.getElementById("title").className = styles.questionTitleBad;
-      document.getElementById("option1").className = styles.questionOptionBad;
-      document.getElementById("option2").className = styles.questionOptionBad;
-      document.getElementById("option3").className = styles.questionOptionBad;
-      document.getElementById("option4").className = styles.questionOptionBad;
+    const option1 = document.getElementById("option1");
+    const option2 = document.getElementById("option2");
+    const option3 = document.getElementById("option3");
+    const option4 = document.getElementById("option4");
+    const reset = document.getElementById("reset");
+  
+    if (option1 && option2 && option3 && option4 && reset) {
+      option1.disabled = true;
+      option2.disabled = true;
+      option3.disabled = true;
+      option4.disabled = true;
+      reset.disabled = true;
+  
+      const selectedOptionId = e.target.id;
+      const correctOptionId = Object.keys(stateQuestion).find(key => stateQuestion[key] === stateQuestion.correct);
+  
+      if (e.target.outerText === stateQuestion.correct) {
+        if (document.getElementById(selectedOptionId)) {
+          document.getElementById(selectedOptionId).className = styles.questionOptionGood;
+        }
+      } else {
+        if (document.getElementById(selectedOptionId)) {
+          document.getElementById(selectedOptionId).className = styles.questionOptionBad;
+        }
+        if (document.getElementById(correctOptionId)) {
+          document.getElementById(correctOptionId).className = styles.questionOptionGoodMark;
+        }
+      }
       setTimeout(endQuestion, 4000);
     }
   };
-
+  
   const handleNew = () => {
     if (url.includes("fisio")) {
       dispatch(get_Fisio_Question());
