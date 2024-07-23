@@ -1,6 +1,6 @@
 {
-  "short_name": "Pedidos",
-  "name": "Manejo de Pedidos",
+  "short_name": "Choice",
+  "name": "Multiple Choice App",
   "icons": [
     {
       "src": "favicon.ico",

@@ -39,6 +39,33 @@ export default function App() {
           />
 
           <Route
+            path="/microfungi"
+            render={(props) => (
+              <>
+                <Questions {...props} category="micro" />
+              </>
+            )}
+          />
+
+          <Route
+            path="/microvirus"
+            render={(props) => (
+              <>
+                <Questions {...props} category="micro" />
+              </>
+            )}
+          />
+
+          <Route
+            path="/microbacterium"
+            render={(props) => (
+              <>
+                <Questions {...props} category="micro" />
+              </>
+            )}
+          />
+
+          <Route
             path="/farmaco"
             render={(props) => (
               <>

@@ -19,7 +19,7 @@ export default function DrillQuestions() {
   const [score, setScore] = useState(0);
 
   useEffect(() => {
-    if (category === "fisio" || category === "micro" || category === "farmaco") {
+    if (category === "fisio" || category === "micro" || category === "farmaco" || category === "microvirus" || category === "microfungi" || category === "microbacterium") {
       setAmount(40);
       dispatch(generate_exam_model(category, amount));
     }
